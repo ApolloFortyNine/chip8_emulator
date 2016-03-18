@@ -14,13 +14,14 @@ private:
   unsigned short SP;
 
 public:
-  unsigned bool key[16];
+  unsigned char key[16];
   unsigned char screen[64][32];
   Chip8();
   void init();
-  void executeNextOp();
+  void executeNextOpcode();
+  void drawSprite(unsigned char X, unsigned char Y, unsigned char N);
   bool loadGame(const char *filename);
   void decreaseTimers();
-
-}
+  unsigned short test();
+};
 #endif
